@@ -5,13 +5,37 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             var audio = document.getElementById("bg-audio");
-            audio.play().catch(error => console.log("Autoplay blocked: User interaction needed."));
+            var playButton = document.getElementById("play-button");
+            
+            playButton.addEventListener("click", function () {
+                audio.play();
+            });
         });
     </script>
+    <style>
+        body {
+            background: transparent;
+            margin: 0;
+            overflow: hidden;
+        }
+        #play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <audio id="bg-audio" autoplay loop>
+    <audio id="bg-audio" loop>
         <source src="nobodyknows.m4a" type="audio/mp4">
     </audio>
+    <button id="play-button">Play</button>
 </body>
 </html>
