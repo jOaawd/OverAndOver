@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Audio Player</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var audio = document.getElementById("bg-audio");
+            audio.play().catch(error => console.log("Autoplay blocked: User interaction needed."));
+        });
+    </script>
 </head>
 <body>
-    <audio autoplay loop>
+    <audio id="bg-audio" autoplay loop>
         <source src="nobodyknows.m4a" type="audio/mp4">
     </audio>
 </body>
