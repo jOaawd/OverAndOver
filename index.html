@@ -3,12 +3,18 @@
 <head>
     <title>Audio Player</title>
     <script>
+        function playAudio() {
+            var audio = document.getElementById("bg-audio");
+            audio.play().catch(error => console.log("Autoplay blocked: ", error));
+        }
+
         window.addEventListener("message", function (event) {
             if (event.data === "playAudio") {
-                var audio = document.getElementById("bg-audio");
-                audio.play();
+                playAudio();
             }
         });
+
+        document.addEventListener("DOMContentLoaded", playAudio);
     </script>
     <style>
         body {
